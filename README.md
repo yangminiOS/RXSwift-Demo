@@ -22,4 +22,10 @@ https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/rxswift_core/o
 
 https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/rxswift_core/observable.html
 
+#### filter 
+
+仅仅发出 Observable 中通过判定的元素, 操作符将通过提供的判定方法过滤一个 Observable
+
+https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/filter.html
+
 
