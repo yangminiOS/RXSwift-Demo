@@ -37,14 +37,14 @@ class ValidationService: NSObject {
     }
     
     
-    func passwordvValidate(_ password: String) ->Observable<TFResult> {
+    func passwordvValidate(_ password: String) ->TFResult {
         
         if(password.count < pswMin  || password.count > pswMax) {
             
-            return .just(.failed(error: "密码长度为\(pswMin)-\(pswMax)位"))
+            return .failed(error: "密码长度为\(pswMin)-\(pswMax)位")
         }
         
-        return .just(.success)
+        return .success
     }
     
     func login(_ username: String, password: String) ->Observable<TFResult> {

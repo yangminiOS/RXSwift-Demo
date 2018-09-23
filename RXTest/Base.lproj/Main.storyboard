@@ -36,30 +36,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbz-fz-yGt">
-                                <rect key="frame" x="30" y="264" width="315" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码至少8-16个字符" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbz-fz-yGt">
+                                <rect key="frame" x="30" y="259" width="315" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="1Zn-5t-iQ6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.82745098039999998" green="0.043137254899999998" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYt-aD-FD3">
-                                <rect key="frame" x="30" y="324" width="315" height="40"/>
-                                <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="30" y="319" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.22236091330055208" green="1" blue="0.2398003078933304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gNw-9f-9XG"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8s-fs-yBS">
-                                <rect key="frame" x="30" y="194" width="315" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名至少6个字符" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8s-fs-yBS">
+                                <rect key="frame" x="30" y="189" width="315" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="siZ-eY-Uxs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -76,8 +76,8 @@
                             <constraint firstItem="G1M-pb-Myw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="cVu-J9-BPX"/>
                             <constraint firstItem="Xbz-fz-yGt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ewD-Fa-cGX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tYt-aD-FD3" secondAttribute="trailing" constant="30" id="gdA-gY-Thf"/>
-                            <constraint firstItem="Xbz-fz-yGt" firstAttribute="top" secondItem="8yd-Es-1i8" secondAttribute="bottom" constant="10" id="ooS-0u-Wim"/>
-                            <constraint firstItem="s8s-fs-yBS" firstAttribute="top" secondItem="G1M-pb-Myw" secondAttribute="bottom" constant="10" id="vm6-tI-cpS"/>
+                            <constraint firstItem="Xbz-fz-yGt" firstAttribute="top" secondItem="8yd-Es-1i8" secondAttribute="bottom" constant="5" id="ooS-0u-Wim"/>
+                            <constraint firstItem="s8s-fs-yBS" firstAttribute="top" secondItem="G1M-pb-Myw" secondAttribute="bottom" constant="5" id="vm6-tI-cpS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G1M-pb-Myw" secondAttribute="trailing" constant="30" id="xFD-he-fL8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xbz-fz-yGt" secondAttribute="trailing" constant="30" id="xnF-rc-ks2"/>
                         </constraints>

@@ -22,37 +22,68 @@ class viewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
-    var viewMoldel: LoginViewModel!
+    let minUsernameCount = 6
+    let minPswCount = 8
+    let maxPswCount = 16
+    
     
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
-        loginButton.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
+
     }
     
     private func setupUI() {
         
+        let usernameVaild = nameTF.rx.text.orEmpty
+            .map{$0.count >= self.minUsernameCount}
+            .share(replay: 1)
+      
+        usernameVaild.bind(to: remindName.rx.isHidden).disposed(by: disposeBag)
         
+        let passwordVaild = pswTF.rx.text.orEmpty
+            .map{ $0.count >= 3 && $0.count <= self.maxPswCount}
+            .share(replay:1)
         
-        let viewModel = LoginViewModel()
+        passwordVaild.bind(to: remindPsw.rx.isHidden).disposed(by: disposeBag)
         
-        nameTF.rx.text.orEmpty
-            .bind(to: viewModel.username)
+        let loginVaild = Observable.combineLatest(usernameVaild, passwordVaild){$0 && $1}
+            .share(replay:1)
+        
+        loginVaild.bind(to: loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        viewModel.userNameAble.bind(to: remindName.rx.validationResult).disposed(by: disposeBag)
+        loginButton.rx.tap
+            .subscribe(onNext:{[weak self] in self?.clickButton()})
+            .disposed(by: disposeBag)
         
     }
     
     
     @objc private func clickButton() {
-        let alertVC = UIAlertController.init(title: "弹窗测试", message: "Akulaku akan menjaga keamanan akun Anda, simpan dengan baik kata sandi pembayaran Anda untuk menghindari penyalahgunaan pemakaian akun, ataupun pemesanan.\n Ambil hadiah pake voucher 10k dan lanjutkan berbelanja", preferredStyle: .alert)
-        let cancel = UIAlertAction.init(title: "kelual", style: .default, handler: nil)
         
-        let done = UIAlertAction.init(title: "Ambil hadiah 10k", style: .default, handler: nil)
+        LoginApi.token(username: nameTF.text!, password: pswTF.text!).flatMapLatest(LoginApi.userInfo).subscribe(onNext: { (userInfo) in
+            
+            self.alertView(title: userInfo)
+            
+        }, onError: { (error) in
+            
+            print("error")
+            
+        }).dispose()
+       
+       
+    }
+    
+    func alertView(title: String) {
+        
+        let alertVC = UIAlertController.init(title: "提示", message: title, preferredStyle: .alert)
+        
+        let cancel = UIAlertAction.init(title: "取消", style: .default, handler: nil)
+        
+        let done = UIAlertAction.init(title: "确定", style: .default, handler: nil)
         
         alertVC.addAction(cancel)
         

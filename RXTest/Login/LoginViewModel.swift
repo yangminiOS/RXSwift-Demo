@@ -17,7 +17,7 @@ class LoginViewModel {
     let loginTaps = PublishSubject<Void>()
     
     let userNameAble: Observable<TFResult>
-    //let passWordAble: Observable<TFResult>
+    let passWordAble: Observable<TFResult>
     //let loginButtonAabel: Observable<Bool>
     //let loginResult: Observable<TFResult>
     
@@ -31,6 +31,10 @@ class LoginViewModel {
                     .catchErrorJustReturn(.failed(error: "username检测出错"))
             }
             .share(replay: 1)
+        
+        passWordAble = password.asObservable().map{ password in
+            return service.passwordvValidate(password)
+        }.share(replay: 1)
 
 
     }
