@@ -37,3 +37,11 @@ flatMap 操作符将源 Observable 的每一个元素应用一个转换方法，
 这个操作符是非常有用的，例如，当 Observable 的元素本身拥有其他的 Observable 时，你可以将所有子 Observables 的元素发送出来。
 
 https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/flatMap.html
+
+#### distinctUntilChanged
+
+阻止 Observable 发出相同的元素
+
+distinctUntilChanged 操作符将阻止 Observable 发出相同的元素。如果后一个元素和前一个元素是相同的，那么这个元素将不会被发出来。如果后一个元素和前一个元素不相同，那么这个元素才会被发出来。
+
+https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/distinctUntilChanged.html
