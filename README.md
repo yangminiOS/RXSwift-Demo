@@ -53,3 +53,11 @@ https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/
 withLatestFrom 操作符将两个 Observables 中最新的元素通过一个函数组合起来，然后将这个组合的结果发出来。当第一个 Observable 发出一个元素时，就立即取出第二个 Observable 中最新的元素，通过一个组合函数将两个最新的元素合并后发送出去。
 
 https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/withLatestFrom.html
+
+#### BehaviorSubject
+
+当观察者对 BehaviorSubject 进行订阅时，它会将源 Observable 中最新的元素发送出来（如果不存在最新的元素，就发出默认元素）。然后将随后产生的元素发送出来
+
+如果源 Observable 因为产生了一个 error 事件而中止， BehaviorSubject 就不会发出任何元素，而是将这个 error 事件发送出来
+
+https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/rxswift_core/observable_and_observer/behavior_subject.html
