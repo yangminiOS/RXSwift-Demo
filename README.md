@@ -28,6 +28,12 @@ https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/rxswift_core/o
 
 https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/filter.html
 
+#### Map
+通过一个转换函数，将 Observable 的每个元素转换一遍
+map 操作符将源 Observable 的每个元素应用你提供的转换方法，然后返回含有转换结果的 Observable
+
+https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/map.html
+
 #### flatMap
 
 将 Observable 的元素转换成其他的 Observable，然后将这些 Observables 合并
