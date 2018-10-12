@@ -67,3 +67,17 @@ https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/
 如果源 Observable 因为产生了一个 error 事件而中止， BehaviorSubject 就不会发出任何元素，而是将这个 error 事件发送出来
 
 https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/rxswift_core/observable_and_observer/behavior_subject.html
+
+
+
+
+
+####完成记录
+
+1. init
+
+2.RxSwift 部分关键词学习
+
+3.完成登录的协议
+
+4.协议方法的实现
