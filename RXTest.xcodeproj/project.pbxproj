@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2C71BDA4B06C716C91FB6478 /* Pods_RXTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B43003C18DCB4B741B999C /* Pods_RXTest.framework */; };
+		3D2B00F921577E9B0047F5AF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B00F821577E9B0047F5AF /* RegisterViewController.swift */; };
+		3D2B00FC21579A950047F5AF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B00FB21579A950047F5AF /* Protocols.swift */; };
+		3D2B0100215B6D770047F5AF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B00FF215B6D770047F5AF /* RegisterViewModel.swift */; };
 		3D35F8292139624D00B5C8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35F8282139624D00B5C8FE /* AppDelegate.swift */; };
 		3D35F82B2139624E00B5C8FE /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35F82A2139624E00B5C8FE /* LoginController.swift */; };
 		3D35F82E2139624E00B5C8FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D35F82C2139624E00B5C8FE /* Main.storyboard */; };
@@ -17,10 +20,14 @@
 		3D35F83F213A871A00B5C8FE /* LoginProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35F83E213A871A00B5C8FE /* LoginProtocal.swift */; };
 		3D35F841213A91F700B5C8FE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35F840213A91F700B5C8FE /* Service.swift */; };
 		3D7054FA215647CB00E3020C /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7054F9215647CB00E3020C /* LoginApi.swift */; };
+		3D915EFD21707EDD000DB3F5 /* DefaultImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D915EFC21707EDD000DB3F5 /* DefaultImplementations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1DC27138310AB23E8BAA7E3C /* Pods-RXTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RXTest/Pods-RXTest.debug.xcconfig"; sourceTree = "<group>"; };
+		3D2B00F821577E9B0047F5AF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3D2B00FB21579A950047F5AF /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		3D2B00FF215B6D770047F5AF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		3D35F8252139624D00B5C8FE /* RXTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D35F8282139624D00B5C8FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D35F82A2139624E00B5C8FE /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -32,6 +39,7 @@
 		3D35F83E213A871A00B5C8FE /* LoginProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocal.swift; sourceTree = "<group>"; };
 		3D35F840213A91F700B5C8FE /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		3D7054F9215647CB00E3020C /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
+		3D915EFC21707EDD000DB3F5 /* DefaultImplementations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImplementations.swift; sourceTree = "<group>"; };
 		63B43003C18DCB4B741B999C /* Pods_RXTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RXTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCC422DAFAEEAD57290CDB8 /* Pods-RXTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RXTest/Pods-RXTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +62,17 @@
 				63B43003C18DCB4B741B999C /* Pods_RXTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D2B00F721577E520047F5AF /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				3D2B00F821577E9B0047F5AF /* RegisterViewController.swift */,
+				3D2B00FB21579A950047F5AF /* Protocols.swift */,
+				3D2B00FF215B6D770047F5AF /* RegisterViewModel.swift */,
+				3D915EFC21707EDD000DB3F5 /* DefaultImplementations.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		3D35F81C2139624D00B5C8FE = {
@@ -82,6 +101,7 @@
 				3D35F82F2139624F00B5C8FE /* Assets.xcassets */,
 				3D35F8312139624F00B5C8FE /* LaunchScreen.storyboard */,
 				3D35F8342139624F00B5C8FE /* Info.plist */,
+				3D2B00F721577E520047F5AF /* Register */,
 				3D35F83A213A702300B5C8FE /* Login */,
 			);
 			path = RXTest;
@@ -224,10 +244,14 @@
 			files = (
 				3D35F82B2139624E00B5C8FE /* LoginController.swift in Sources */,
 				3D35F8292139624D00B5C8FE /* AppDelegate.swift in Sources */,
+				3D2B00F921577E9B0047F5AF /* RegisterViewController.swift in Sources */,
 				3D35F841213A91F700B5C8FE /* Service.swift in Sources */,
 				3D35F83C213A707D00B5C8FE /* LoginViewModel.swift in Sources */,
 				3D7054FA215647CB00E3020C /* LoginApi.swift in Sources */,
 				3D35F83F213A871A00B5C8FE /* LoginProtocal.swift in Sources */,
+				3D915EFD21707EDD000DB3F5 /* DefaultImplementations.swift in Sources */,
+				3D2B0100215B6D770047F5AF /* RegisterViewModel.swift in Sources */,
+				3D2B00FC21579A950047F5AF /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

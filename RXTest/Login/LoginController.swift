@@ -64,7 +64,8 @@ class viewController: UIViewController {
     
     @objc private func clickButton() {
         
-        LoginApi.token(username: nameTF.text!, password: pswTF.text!).flatMapLatest(LoginApi.userInfo).subscribe(onNext: { (userInfo) in
+        LoginApi.token(username: nameTF.text!, password: pswTF.text!).flatMapLatest(LoginApi.userInfo)
+            .subscribe(onNext: { (userInfo) in
             
             self.alertView(title: userInfo)
             
