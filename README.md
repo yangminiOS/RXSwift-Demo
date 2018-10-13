@@ -81,3 +81,7 @@ https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/rxswift_core/o
 3.完成登录的协议
 
 4.协议方法的实现
+
+5.loginVM 的实现
+
+将两个 Observables 最新的元素通过一个函数组合起来，当第一个 Observable 发出一个元素，就将组合后的元素发送出来
