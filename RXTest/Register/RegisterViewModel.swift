@@ -25,8 +25,6 @@ class RegisterViewModel: NSObject {
     
     let signedIn: Observable<Bool>
     
-    //let signingIn: Observable<Bool>
-    
     //输入  --->输出
     
     init(input: (username: Observable<String>,
