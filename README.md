@@ -91,6 +91,6 @@ https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/
 
 5.loginVM 的实现
 
-6. 优化VM文件
+6. 优化RegisterVM文件
 
 将两个 Observables 最新的元素通过一个函数组合起来，当第一个 Observable 发出一个元素，就将组合后的元素发送出来
