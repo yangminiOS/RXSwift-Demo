@@ -69,12 +69,22 @@ class RegisterViewModel: NSObject {
         
         let usernameAndPassword = Observable.combineLatest(input.username, input.password){(username: $0, password: $1)}
         
-        signedIn = input.loginTaps.withLatestFrom(usernameAndPassword)
-            .flatMapLatest{ pair in
+        signedIn = input.loginTaps.withLatestFrom(usernameAndPassword).flatMapLatest{ pair in
             
             return API.singup(pair.username, password: pair.password)
+                .observeOn(MainScheduler.instance)
+                .catchErrorJustReturn(false)
             
-        }
+            }
+        
+//        signedIn = input.loginTaps.withLatestFrom(usernameAndPassword)
+//            .flatMapLatest{ pair in
+//
+//            return API.singup(pair.username, password: pair.password)
+//
+//        }
+        
+        
     }
     
 

@@ -15,7 +15,9 @@ class RegisterDefaultValidationService: RegisterValidationService {
     let minPswCount = 8
     let maxPswCount = 16
     
-    static let api = RetisterDefaultAPI()
+    static let service = RegisterDefaultValidationService()
+    
+    let api = RetisterDefaultAPI.api
     
     func validateUsername(_ username: String) -> Observable<ValidationResult> {
         
@@ -29,11 +31,11 @@ class RegisterDefaultValidationService: RegisterValidationService {
             return .just(.failed(message: "内容只能包含数字和字母"))
         }
         
-        return RegisterDefaultValidationService.api.usernameAvailabel(username)
+        return api.usernameAvailabel(username)
             .map({ available  in
                 
                 if available {
-                    return .ok(message:"")
+                    return .ok(message:"用户名可用")
                 }else{
                     return .failed(message: "用户名已经存在")
                 }
@@ -73,15 +75,17 @@ class RegisterDefaultValidationService: RegisterValidationService {
 
 
 class RetisterDefaultAPI: RegisterAPI {
+    
+    static let api = RetisterDefaultAPI()
 
     func usernameAvailabel(_ username: String) -> Observable<Bool> {
-        let availabel = arc4random() % 2 == 0 ? false : true
+        let availabel = arc4random() % 7 == 0 ? false : true
         return .just(availabel)
         
     }
     
     func singup(_ username: String, password: String) -> Observable<Bool> {
-         let signupResult = arc4random() % 5 == 0 ? false : true
+         let signupResult = arc4random() % 2 == 0 ? false : true
         
         return .just(signupResult)
     }

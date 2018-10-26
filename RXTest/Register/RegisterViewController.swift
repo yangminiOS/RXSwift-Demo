@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class RegisterViewController: UIViewController {
     
@@ -24,27 +26,31 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var registerButton: UIButton!
     
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        print("sdfa")
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        configViewModel()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func configViewModel() {
+        
+        let registerModel = RegisterViewModel(input: (username: usenameTF.rx.text.orEmpty.asObservable(), password: passwordTF.rx.text.orEmpty.asObservable(), repeadPassword: repeatPasswordTF.rx.text.orEmpty.asObservable(), loginTaps: registerButton.rx.tap.asObservable())
+            
+            , dependency: (API: RetisterDefaultAPI.api, validationService: RegisterDefaultValidationService.service))
+        
+        registerModel.validateUsername.bind(to: usenameLabel.rx.labelValidationResult).disposed(by:disposeBag)
+        
+        registerModel.validatePassword.bind(to: passwordLabel.rx.labelValidationResult).disposed(by: disposeBag)
+        
+        registerModel.validatePasswordRepeated.bind(to: repeatPasswordLabel.rx.labelValidationResult).disposed(by: disposeBag)
+        
+        registerModel.signupEnable.bind(to: registerButton.rx.isEnabled).disposed(by: disposeBag)
+        
+        registerModel.signedIn.subscribe({ singedin in
+            print(singedin)
+        }).disposed(by: disposeBag)
+        
     }
-    */
 
 }
