@@ -76,8 +76,13 @@ ConnectableObservable 和普通的 Observable 十分相似，不过在被订阅�
 
 https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/connect.html
 
+#### catchError
 
+从一个错误事件中恢复，将错误事件替换成一个备选序列
 
+catchError 操作符将会拦截一个 error 事件，将它替换成其他的元素或者一组元素，然后传递给观察者。这样可以使得 Observable 正常结束，或者根本都不需要结束
+
+https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/catchError.html
 
 ####完成记录
 
