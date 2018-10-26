@@ -68,9 +68,21 @@ https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/
 
 https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/rxswift_core/observable_and_observer/behavior_subject.html
 
+#### connect 
 
+通知 ConnectableObservable 可以开始发出元素了
 
+ConnectableObservable 和普通的 Observable 十分相似，不过在被订阅后不会发出元素，直到 connect 操作符被应用为止。这样一来你可以等所有观察者全部订阅完成后，才发出元素。
 
+https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/connect.html
+
+#### catchError
+
+从一个错误事件中恢复，将错误事件替换成一个备选序列
+
+catchError 操作符将会拦截一个 error 事件，将它替换成其他的元素或者一组元素，然后传递给观察者。这样可以使得 Observable 正常结束，或者根本都不需要结束
+
+https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/catchError.html
 
 ####完成记录
 
@@ -83,5 +95,7 @@ https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/rxswift_core/o
 4.协议方法的实现
 
 5.loginVM 的实现
+
+6. 优化RegisterVM文件
 
 将两个 Observables 最新的元素通过一个函数组合起来，当第一个 Observable 发出一个元素，就将组合后的元素发送出来
