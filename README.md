@@ -44,11 +44,20 @@ flatMap 操作符将源 Observable 的每一个元素应用一个转换方法，
 
 https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/flatMap.html
 
+#### flatMapLatest
+
+将 Observable 的元素转换成其他的 Observable，然后取这些 Observables 中最新的一个
+
+flatMapLatest 操作符将源 Observable 的每一个元素应用一个转换方法，将他们转换成 Observables。一旦转换出一个新的 Observable，就只发出它的元素，旧的 Observables 的元素将被忽略掉。
+
+https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/flatMapLatest.html
+
 #### distinctUntilChanged
 
 阻止 Observable 发出相同的元素
 
 distinctUntilChanged 操作符将阻止 Observable 发出相同的元素。如果后一个元素和前一个元素是相同的，那么这个元素将不会被发出来。如果后一个元素和前一个元素不相同，那么这个元素才会被发出来。
+
 
 https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/distinctUntilChanged.html
 
