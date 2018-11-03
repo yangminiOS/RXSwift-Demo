@@ -76,7 +76,9 @@ https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/
 如果源 Observable 因为产生了一个 error 事件而中止， BehaviorSubject 就不会发出任何元素，而是将这个 error 事件发送出来
 
 https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/rxswift_core/observable_and_observer/behavior_subject.html
+#### combineLatest
 
+当多个 Observables 中任何一个发出一个元素，就发出一个元素。这个元素是由这些 Observables 中最新的元素，通过一个函数组合起来的
 #### connect 
 
 通知 ConnectableObservable 可以开始发出元素了
