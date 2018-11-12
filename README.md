@@ -11,6 +11,19 @@
 
 二、  RXSwift 关键词理解
 
+#### Variable
+
+在 Swift 中我们经常会用 var 关键字来声明变量。RxSwift 提供的 Variable 实际上是 var 的 Rx 版本，你可以将它看作是 RxVar
+
+第一种使用 var 的方式十分常见，在 ViewController 中监听 Model 的变化，然后刷新页面。
+
+第二种使用 Variable 则是 RxSwift 独有的。Variable 几乎提供了 var 的所有功能。另外，加上一条非常重要的特性，就是可以通过调用 asObservable() 方法转换成序列。然后你可以对这个序列应用操作符，来合成其他的序列。所以，如果我们声明的变量需要提供 Rx 支持，那就选用 Variable 这个类型。
+
+说明
+Variable 封装了一个 BehaviorSubject，所以它会持有当前值，并且 Variable 会对新的观察者发送当前值。它不会产生 error 事件。Variable 在 deinit 时，会发出一个 completed 事件。
+
+https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/rxswift_core/observable_and_observer/variable.html
+
 #### Observer - 观察者
 观察者 是用来监听事件，然后它需要这个事件做出响应。例如：弹出提示框就是观察者，它对点击按钮这个事件做出响应。
 
