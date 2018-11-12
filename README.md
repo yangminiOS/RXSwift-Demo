@@ -114,6 +114,13 @@ catchError 操作符将会拦截一个 error 事件，将它替换成其他的�
 https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/catchError.html
 
 
+#### MainScheduler
+
+在 Rx 中我们已经有主线程切换的姿势：
+
+.observeOn(MainScheduler.instance)
+
+
 ####完成记录
 
 1. init
